@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Source+Serif+Pro:wght@200;300;400&display=swap');
+
+:root {
+    --footercolor: hsl(216, 44%, 31%);
+}
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
+/* {
+    border: 1px solid black;
+}*/
+
+/* nav */
+
+.grilla-nav-izq {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    width: 100vw;
+    font-family: Raleway;
+    position: fixed;
+    top: 0;
+    height: auto;
+    background-color: var(--footercolor);
+    align-items: center;
+}
+
+.nav-hijo-izq {
+    padding: 1em;
+    text-align: center;
+    color: aliceblue;
+    border-right: 1px solid white;
+    grid-column-start: span 1;
+    display: block;
+}
+
+.nav-hijo-izq:last-child {
+    padding: 1em;
+    text-align: center;
+    color: aliceblue;
+    border: none;
+    box-shadow: #2C4770;
+}
+
+.grilla-nav-izq a {
+    text-decoration: none;
+}
+
+.grilla-nav-izq a:hover {
+    text-decoration: underline;
+}
+
+/* Fin nav */
+
+.grilla {
+    display: grid;
+    column-gap: 1em;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.hijo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-start: span 12;
+    height: 100vh;
+}
+
+.presentacion {
+    grid-column-start: 2;
+    grid-column-end: span 10;
+}
+
+.newsletter {
+    grid-column-start: span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+footer {
+    grid-column-start: span 12;
+    background-color: var(--footercolor);
+}
