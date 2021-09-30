@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Source+Serif+Pro:wght@200;300;400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Koh+Santepheap&display=swap');
+
 :root {
     --footercolor: hsl(216, 44%, 31%);
 }
@@ -9,9 +11,9 @@ body {
     margin: 0;
 }
 
-/* {
+* {
     border: 1px solid black;
-}*/
+}
 
 /* nav */
 
@@ -67,6 +69,7 @@ body {
     background-position: center;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     grid-column-start: span 12;
     height: 100vh;
 }
@@ -74,6 +77,38 @@ body {
 .presentacion {
     grid-column-start: 2;
     grid-column-end: span 10;
+    grid-row: span 12;
+    display: flex;
+    align-items: center;
+}
+
+.logo-blanco {
+    image-rendering: optimizeQuality;
+    width: 300px;
+    margin: auto;
+    display: block;
+}
+
+.visit-us {
+    grid-column-start: 2;
+    grid-column-end: span 5;
+    grid-row-start: 4;
+    grid-row-end: span 6;
+    background-color: rgba(243, 238, 231, 0.8);
+    border-radius: 0.3em;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.title {
+    grid-row: 1/4;
+    grid-column: 2/12;
+    text-align: center;
+    font-size: 2em;
+    font-family: Koh Santepheap;
 }
 
 .newsletter {
