@@ -5,6 +5,12 @@
 :root {
     --footer-backgroundcolor: hsla(0, 0%, 100%, 1);
     --footer-fontcolor: rgb(0, 0, 0);
+    --title-fontcolor: rgb(43, 41, 41);
+    --desc-fontcolor: rgb(80, 0, 0);
+}
+
+* {
+    border: 1px solid black;
 }
 
 body {
@@ -113,6 +119,92 @@ body {
     font-size: 3.5em;
     font-family: Koh Santepheap;
 }
+
+/* fin index */
+
+/* empresas */
+
+.grilla-emp {
+    display: grid;
+    column-gap: 0.5em;
+    row-gap: 0.5em;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-content: stretch;
+}
+
+.title-emp {
+    height: 40vh;
+    width: 100vw;
+    display: grid;
+    grid-column-start: span 12;
+    grid-row-start: span 1;
+    align-content: center;
+    box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.83);
+    -webkit-box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.83);
+    -moz-box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.83);
+}
+
+.title-emp h2 {
+    color: var(--title-fontcolor);
+    font-size: 4em;
+    text-align: center;
+    font-family: Koh Santepheap;
+}
+
+.grilla-3-col {
+    grid-column: 2/12;
+    grid-row-end: span 1;
+    height: 25vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1em;
+    align-content: center;
+}
+
+.grilla-2-col {
+    grid-column: 1/13;
+    grid-row-end: span 1;
+    height: 20vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.2em;
+    align-content: center;
+}
+
+.hijo-col {
+    grid-column-end: span 1;
+    height: inherit;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 0em;
+    column-gap: 0em;
+    grid-template-areas:
+                    "img-vino nombre-vino nombre-vino nombre-vino"
+                    "img-vino desc-vino desc-vino desc-vino"
+                    "img-vino desc-vino desc-vino desc-vino";
+}
+
+.img-vino {
+    grid-area: img-vino;
+    height: auto;
+}
+
+.desc-vino {
+    grid-area: desc-vino;
+    color: var(--desc-fontcolor);
+    text-align: justify;
+    overflow-y: auto;
+    font-size: 1em;
+    height: auto; 
+}
+
+.nombre-vino {
+    grid-area: nombre-vino;
+    border-bottom: indigo 50 px solid;
+}
+/* fin empresas */
 
 footer {
     grid-column-start: span 12;
