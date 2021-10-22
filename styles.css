@@ -2,53 +2,52 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Koh+Santepheap&display=swap');
 
-:root {
-    --footer-backgroundcolor: hsla(0, 0%, 100%, 1);
+:root {;
     --footer-fontcolor: rgb(0, 0, 0);
-    --title-fontcolor: rgb(43, 41, 41);
-    --desc-fontcolor: rgb(80, 0, 0);
+    --main-color: #8c124b;
+    --title-color: #FEF9E7;
+    --second-background: #FEF9E7;
+    --main-background: #57082d;
 }
 
 * {
-    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    width: 100%;
+    width: 100vw;
     margin: 0;
+    overflow-x: hidden;
 }
 
-
 /* nav */
-
 .grilla-nav-izq {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    z-index: 1;
+    padding: 0.2em 0 0.1em 0;
+    display: flex;
+    flex-direction: row;
     width: 100vw;
     font-family: Raleway;
     position: fixed;
     top: 0;
-    height: auto;
-    background-color: var(--footer-backgroundcolor);
+    height: 45px;
+    background-color: var(--second-background);
     align-items: center;
-    border-bottom: 2px solid var(--footer-fontcolor);
+    justify-content: space-around;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.logo-nav {
+    padding-top: 5px;
 }
 
 .nav-hijo-izq {
-    padding: 1em;
     text-align: center;
-    color: var(--footer-fontcolor);
-    border-right: 1px solid var(--footer-fontcolor);
+    color: var(--main-color);
     grid-column-start: span 1;
     display: block;
-}
-
-.nav-hijo-izq:last-child {
-    padding: 1em;
-    text-align: center;
-    color: var(--footer-fontcolor);
-    border: none;
-    box-shadow: var(--footer-fontcolor);
 }
 
 .grilla-nav-izq a {
@@ -56,159 +55,97 @@ body {
 }
 
 .grilla-nav-izq a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
-
 /* Fin nav */
 
-.grilla {
+.flex-col-main {
     display: grid;
-    column-gap: 1em;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(1fr, 5);
 }
 
-.hijo {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    grid-column-start: span 12;
+.wave-container {
     height: 100vh;
-}
-
-.presentacion {
-    grid-column-start: 2;
-    grid-column-end: span 10;
-    grid-row: span 12;
-    display: flex;
-    align-items: center;
-}
-
-.logo-blanco {
-    image-rendering: optimizeQuality;
-    width: 300px;
-    margin: auto;
-    display: block;
-}
-
-.about-us {
-    grid-column-start: 2;
-    grid-column-end: span 10;
-    grid-row-start: 3;
-    grid-row-end: span 7;
-    background-color: rgba(243, 238, 231, 0.8);
-    border-radius: 0.3em;
-    display: grid;
-    grid-template-columns: 40px repeat(10, 1fr) 40px;
-    grid-template-rows: 40px repeat(10, 1fr) 40px;
-}
-
-.ab-us-title-box {
-    grid-row: 2/12;
-    grid-column: 2/5;
-    border-right: 2px solid var(--footer-fontcolor);
-}
-
-.ab-us-title-box h2 {
-    text-align: end;
-    padding-right: 5px;
-    margin: auto;
-    font-size: 3.5em;
-    font-family: Koh Santepheap;
-}
-
-/* fin index */
-
-/* empresas */
-
-.grilla-emp {
-    display: grid;
-    column-gap: 0.5em;
-    row-gap: 0.5em;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    align-content: stretch;
-}
-
-.title-emp {
-    height: 40vh;
     width: 100vw;
+    background-color: var(--main-background);
+    grid-row: 1 span 1;
     display: grid;
-    grid-column-start: span 12;
-    grid-row-start: span 1;
-    align-content: center;
-    box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.83);
-    -webkit-box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.83);
-    -moz-box-shadow: 1px 3px 9px 1px rgba(0,0,0,0.83);
+    grid-template-columns: repeat(1fr, 12);
+    grid-template-rows: repeat(1fr, 6);
 }
 
-.title-emp h2 {
-    color: var(--title-fontcolor);
-    font-size: 4em;
+.filler {
+    height: 55px;
+    grid-column: span 12;
+    grid-row: 1 / 2;
+}
+.wave-container h1 {
+    color: var(--title-color);
+    font-size: 6em;
     text-align: center;
-    font-family: Koh Santepheap;
+    grid-column: span 12;
+    grid-row: 2 / 3;
 }
 
-.grilla-3-col {
-    grid-column: 2/12;
-    grid-row-end: span 1;
-    height: 25vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 1em;
-    align-content: center;
+.wave-container p {
+    color: var(--title-color);
+    font-size: 1.3em;
+    margin: 40px 50px 0px 50px;
+    grid-row: 3 / 4;
+    grid-column: 4 / 10;
+    text-align: center;
 }
 
-.grilla-2-col {
+.svg-wave {
+    display: block;
+    width: 100;
+    grid-row: 4/5;
     grid-column: 1/13;
-    grid-row-end: span 1;
-    height: 20vh;
+}
+
+.svg-wave > svg {
+    display: block;
+    width: 100;
+    grid-row: 4/5;
+    grid-column: 1/13;
+}
+
+.topwave {
+    background-image: url(E:/Programming/cac-2168-python/le-cepage/imgs/topwave.svg);
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background: var(--second-background);
+    color: var(--main-background);
+    text-align: center;
+    overflow: hidden;
+    grid-row: 2/3;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.2em;
-    align-content: center;
+    grid-template-columns: repeat(1fr, 12);
+    grid-template-rows: repeat(1fr, 6);
 }
 
-.hijo-col {
-    grid-column-end: span 1;
-    height: inherit;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 0em;
-    column-gap: 0em;
-    grid-template-areas:
-                    "img-vino nombre-vino nombre-vino nombre-vino"
-                    "img-vino desc-vino desc-vino desc-vino"
-                    "img-vino desc-vino desc-vino desc-vino";
+.topwave > svg {
+    display:block;
+    width: 100;
+    height: 80%;
+    grid-row: 1/2;
 }
 
-.img-vino {
-    grid-area: img-vino;
-    height: auto;
+.topwave h1 {
+    color: var(--main-background);
+    z-index: 0;
+    position: relative;
+    font-size: 6em;
+    text-align: center;
+    grid-column: 1/13;
+    grid-row: 1 / 2;
 }
 
-.desc-vino {
-    grid-area: desc-vino;
-    color: var(--desc-fontcolor);
-    text-align: justify;
-    overflow-y: auto;
-    font-size: 1em;
-    height: auto; 
-}
-
-.nombre-vino {
-    grid-area: nombre-vino;
-    border-bottom: indigo 50 px solid;
-}
-/* fin empresas */
-
+/* Footer */
 footer {
     grid-column-start: span 12;
     background-color: var(--footer-backgroundcolor);
-    color: var(--footer-fontcolor);
+    color: var(---main-color);
     height: auto;
 }
