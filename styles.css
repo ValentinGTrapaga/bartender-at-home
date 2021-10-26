@@ -1,151 +1,190 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Source+Serif+Pro:wght@200;300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;1,100&family=Source+Serif+Pro:wght@200;300;400&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Koh+Santepheap&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Koh+Santepheap&display=swap");
 
-:root {;
-    --footer-fontcolor: rgb(0, 0, 0);
-    --main-color: #8c124b;
-    --title-color: #FEF9E7;
-    --second-background: #FEF9E7;
-    --main-background: #57082d;
+:root {
+  --footer-fontcolor: rgb(0, 0, 0);
+  --main-color: #A31F5D;
+  --title-color: #fef9e7;
+  --second-background: #fef9e7;
+  --main-background: #57082d;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    width: 100vw;
-    margin: 0;
-    overflow-x: hidden;
+  width: 100vw;
+  margin: 0;
 }
 
 /* nav */
 .grilla-nav-izq {
-    z-index: 1;
-    padding: 0.2em 0 0.1em 0;
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    font-family: Raleway;
-    position: fixed;
-    top: 0;
-    height: 45px;
-    background-color: var(--second-background);
-    align-items: center;
-    justify-content: space-around;
-    border-bottom: 2px solid var(--main-color);
+  z-index: 1;
+  padding: 0.2em 0 0.1em 0;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  font-family: Raleway;
+  position: fixed;
+  top: 0;
+  height: 45px;
+  background-color: var(--second-background);
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .logo-nav {
-    padding-top: 5px;
+  padding-top: 5px;
 }
 
 .nav-hijo-izq {
-    text-align: center;
-    color: var(--main-color);
-    grid-column-start: span 1;
-    display: block;
+  text-align: center;
+  color: var(--main-color);
+  grid-column-start: span 1;
+  display: block;
 }
 
 .grilla-nav-izq a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .grilla-nav-izq a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 /* Fin nav */
 
 .flex-col-main {
-    display: grid;
-    grid-template-rows: repeat(1fr, 5);
+  width: 100vw;
+  display: grid;
+  grid-template-rows: repeat(1fr, 5);
 }
 
 .wave-container {
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--main-background);
-    grid-row: 1 span 1;
-    display: grid;
-    grid-template-columns: repeat(1fr, 12);
-    grid-template-rows: repeat(1fr, 6);
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--main-background);
+  grid-row: 1/2;
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: repeat(1fr, 12);
+  grid-template-rows: repeat(1fr, 6);
 }
 
-.filler {
-    height: 55px;
-    grid-column: span 12;
-    grid-row: 1 / 2;
-}
 .wave-container h1 {
-    color: var(--title-color);
-    font-size: 6em;
-    text-align: center;
-    grid-column: span 12;
-    grid-row: 2 / 3;
+  color: var(--title-color);
+  font-size: 6em;
+  text-align: center;
+  grid-column: 1/13;
+  grid-row: 2 / 3;
 }
 
-.wave-container p {
-    color: var(--title-color);
-    font-size: 1.3em;
-    margin: 40px 50px 0px 50px;
-    grid-row: 3 / 4;
-    grid-column: 4 / 10;
-    text-align: center;
+.descripcion-principal {
+  width: inherit;
+  grid-column: 1/13;
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: repeat(1fr, 6);
 }
 
-.svg-wave {
-    display: block;
-    width: 100;
-    grid-row: 4/5;
-    grid-column: 1/13;
-}
-
-.svg-wave > svg {
-    display: block;
-    width: 100;
-    grid-row: 4/5;
-    grid-column: 1/13;
+.descripcion-principal p {
+  grid-column: 2/5;
+  color: var(--title-color);
+  font-size: 1.2em;
+  text-align: center;
 }
 
 .topwave {
-    background-image: url(E:/Programming/cac-2168-python/le-cepage/imgs/topwave.svg);
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-    background: var(--second-background);
-    color: var(--main-background);
-    text-align: center;
-    overflow: hidden;
-    grid-row: 2/3;
-    display: grid;
-    grid-template-columns: repeat(1fr, 12);
-    grid-template-rows: repeat(1fr, 6);
+  height: 100vh;
+  width: inherit;
+  background: var(--second-background);
+  color: var(--second-background);
+  text-align: center;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: repeat(1fr, 12);
+  grid-template-rows: repeat(1fr, 6);
 }
 
-.topwave > svg {
-    display:block;
-    width: 100;
-    height: 80%;
-    grid-row: 1/2;
+.filler {
+  grid-column: 1/13;
+  grid-row: 1/2;
+  height: 45px;
+  width: 100vw;
 }
 
 .topwave h1 {
-    color: var(--main-background);
-    z-index: 0;
-    position: relative;
-    font-size: 6em;
-    text-align: center;
-    grid-column: 1/13;
-    grid-row: 1 / 2;
+  width: 100vw;
+  color: var(--main-color);
+  height: fit-content;
+  font-size: 4em;
+  text-align: center;
+  grid-column: 1/12;
+  grid-row: 2 / 3;
+}
+
+.carta {
+  height: auto;
+  grid-row: 3/6;
+  grid-column: 1/13;
+  display: flex;
+  flex-direction: row;
+  padding: 0 2em 0 2em;
+  gap: 2em;
+  justify-content: space-around;
+}
+
+.vinos-y-aperitivos {
+  flex: 1 1 auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vinos-y-aperitivos h3 {
+  color: var(--main-background);
+  font-size: 2em;
+  text-align: center;
+}
+
+.vinos-y-aperitivos p {
+  color: var(--main-background);
+  padding: 2em;
+  font-size: 1em;
+  text-align: center;
+}
+
+.btn {
+  margin-top: 2em;
+  text-decoration: none;
+  margin: 1em auto 1em auto;
+}
+
+.newsletter {
+  grid-column: 1/13;
+  grid-row: 6/7;
+  margin-top: 1em;
 }
 
 /* Footer */
 footer {
-    grid-column-start: span 12;
-    background-color: var(--footer-backgroundcolor);
-    color: var(---main-color);
-    height: auto;
+  grid-column-start: span 12;
+  background-color: var(--footer-backgroundcolor);
+  color: var(---main-color);
+  height: auto;
+  width: 100vw;
 }
