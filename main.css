@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Nanum+Myeongjo:wght@400;800&family=Noto+Serif+Display:wght@300;400;600&family=Prata&family=Raleway:wght@200;300&display=swap');
+
+:root {
+  --footer-background: #252525;
+  --main-color: #A31F5D;
+  --title-color: #fef9e7;
+  --second-background: #fef9e7;
+  --main-background: #57082d;
+  --item-productos: #702C4C;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+* {
+  box-sizing: border-box;
+/*   border: 1px solid black; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  margin: 0;
+}
+
+/* Fuentes */
+.wave-container h1 {
+  font-family: 'Prata', serif;
+}
+
+.topwave h1, .presentacion-carta h1, h2  {
+  font-family: 'Noto Serif Display', serif;;
+}
+
+.recuadro-anim h3, .recuadro-anim h4, .btn {
+  font-family: 'Cinzel', serif;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* nav */
+
+.grilla-nav-izq {
+  z-index: 1;
+  padding: 0.2em 0 0.1em 0;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2em;
+  position: fixed;
+  top: 0;
+  height: 45px;
+  background-color: var(--second-background);
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 0.5px solid var(--main-background);
+}
+
+.logo-nav {
+  padding-top: 5px;
+}
+
+.nav-hijo-izq {
+  text-align: center;
+  color: var(--main-color);
+  grid-column-start: span 1;
+  display: block;
+}
+
+.grilla-nav-izq a {
+  text-decoration: none;
+}
+
+.nav-hijo-izq:hover {
+  border-bottom: 3px solid var(--main-background);
+  transition: all 1000ms ease-in;
+}
+
+/* Fin nav */
+
+.flex-col-main {
+  width: 100vw;
+  display: grid;
+  grid-template-rows: repeat(1fr, 3);
+}
+
+.wave-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--main-background);
+  grid-row: 1/2;
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: repeat(1fr, 12);
+  grid-template-rows: repeat(1fr, 6);
+}
+
+.wave-container h1 {
+  color: var(--title-color);
+  font-size: 6em;
+  text-align: center;
+  grid-column: 1/13;
+  grid-row: 2 / 3;
+}
+
+.descripcion-principal {
+  width: inherit;
+  grid-column: 1/13;
+  grid-row: 3/4;
+}
+
+.descripcion-principal > p {
+  color: var(--title-color);
+  font-size: 1.2em;
+  text-align: center;
+  padding: 0 4em 0 4em;
+}
+
+.topwave {
+  height: 100vh;
+  width: inherit;
+  background: var(--second-background);
+  color: var(--second-background);
+  text-align: center;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: repeat(1fr, 12);
+  grid-template-rows: repeat(1fr, 6);
+}
+
+.filler {
+  grid-column: 1/13;
+  grid-row: 1/2;
+  height: 45px;
+  width: 100vw;
+}
+
+.topwave h1 {
+  width: 100vw;
+  color: var(--main-color);
+  height: fit-content;
+  font-size: 4em;
+  text-align: center;
+  grid-column: 1/12;
+  grid-row: 2 / 3;
+}
+
+.carta {
+  height: auto;
+  grid-row: 3/6;
+  grid-column: 1/13;
+  display: flex;
+  flex-direction: row;
+  padding: 0 2em 0 2em;
+  gap: 2em;
+  justify-content: space-around;
+}
+
+.recuadro-anim {
+  flex: 1 1 auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid var(--main-background);
+  box-shadow: 12px 12px 2px 1px var(--main-background);
+}
+
+.recuadro-anim:hover {
+  box-shadow: 2px 2px 2px 1px var(--main-background);
+  transition: all 250ms ease-in-out
+}
+
+/* Animacion propia creada a partir de la de los botones
+  tomandola como referencia */
+
+.recuadro-anim h3 {
+  color: var(--main-background);
+  font-size: 2em;
+  text-align: center;
+}
+
+.recuadro-anim p {
+  color: var(--main-background);
+  padding: 2em;
+  font-size: 1em;
+  text-align: center;
+}
+
+.btn {
+  color: var(--main-background);
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 0.5em;
+  padding: 5px 1em 5px 1em;
+  margin-top: 2em;
+  text-decoration: none;
+  margin: 1em auto 1em auto;
+}
+
+/* Animacion boton */
+
+.btn-anim {
+  letter-spacing: 0;
+}
+
+.btn-anim:hover,
+.btn-anim:active {
+letter-spacing: 3px;
+transition: all 500ms ease-in-out
+}
+
+.btn-anim:after,
+.btn-anim:before {
+backface-visibility: hidden;
+border: 1px solid var(--second-background);
+bottom: 0px;
+content: " ";
+display: block;
+margin: 0 auto;
+position: relative;
+transition: all 500ms ease-in-out;
+width: 0;
+}
+
+.btn-anim:hover:after,
+.btn-anim:hover:before {
+backface-visibility: hidden;
+border-color: var(--main-background);
+transition: width 500ms ease-in-out;
+width: 100%;
+}
+
+.btn-anim:hover:before {
+bottom: auto;
+top: 0;
+width: 100%;
+}
+
+/* Animacion hecha por https://twitter.com/Dave_Conner en https://codepen.io/davidicus/pen/emgQKJ */
+
+/*  Fin animacion boton */
+
+/* Pagina de vinos y aperitivos */
+
+.vinos-aperitivos-main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.presentacion-carta {
+  width: inherit;
+  height: 55vh;
+  background-color: var(--main-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--title-color);
+}
+
+.presentacion-carta h1 {
+  font-size: 4em;
+  margin: 50px;
+  text-align: center;
+}
+
+.carta-de-productos {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: inherit;
+  background-color: var(--second-background);
+  padding: 25px;
+  gap: 25px;
+}
+
+.titulo-carta {
+  background-color: var(--second-background);
+  color: var(--main-background);
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.producto {
+  flex: 1 1 31%;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0;
+  padding: 0;
+  margin: auto;
+  background-color: var(--item-productos);
+  color: var(--title-color);
+}
+
+.producto h4 {
+  grid-area: 1/1/2/5;
+  margin-top: auto;
+  text-align: center;
+  border-bottom: 1px solid var(--main-background);
+  color: var(--second-background);
+  letter-spacing: 1px;
+  font-size: 1.2em;
+}
+
+.producto img {
+  grid-area: 2/1/6/2;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+.producto p {
+  grid-area: 2/2/6/5;
+  text-align: justify;
+  font-size: 0.8em;
+  margin: auto;
+  color: var(--second-background);
+}
+
+/* Fin pagina de vinos y aperitivos */
+
+
+
+.newsletter {
+  background-color: var(--footer-background);
+  grid-column: 1/13;
+  grid-row: 6/7;
+  margin-top: 2em;
+}
+
+/* Footer */
+footer {
+  grid-row: 3/4;
+  grid-column-start: span 12;
+  background-color: var(--footer-background);
+  color: var(---main-color);
+  height: auto;
+  width: 100vw;
+}
