@@ -43,7 +43,7 @@ body {
   font-family: 'Cinzel', serif;
 }
 
-p {
+p, footer {
   font-family: 'Raleway', sans-serif;
 }
 
@@ -334,13 +334,13 @@ width: 100%;
 
 /* Fin pagina de vinos y aperitivos */
 
-
-
 .newsletter {
-  background-color: var(--footer-background);
+  background-color: var(--second-background);
   grid-column: 1/13;
   grid-row: 6/7;
-  margin-top: 2em;
+  height: 1em;
+  padding-top: 15px;
+  content: " ";
 }
 
 /* Footer */
@@ -348,7 +348,85 @@ footer {
   grid-row: 3/4;
   grid-column-start: span 12;
   background-color: var(--footer-background);
-  color: var(---main-color);
+  color: var(--second-background);
   height: auto;
   width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 30vw;
+  justify-content: flex-start;
+}
+
+.mapa {
+  padding-right: 15px;
+  margin: auto 0 auto auto;
+
+}
+
+.contacto {
+  padding: 15px;
+  display: flex;
+  width: 33%;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  padding-right: 10px;
+  border-right: 2px solid var(--second-background);
+}
+
+.renglon {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.contacto a {
+  text-decoration: underline;
+  color: var(--second-background);
+  font-size: 0.9em;
+}
+
+.contacto h5 {
+  text-decoration: underline;
+  font-size: 1.1em;
+  padding-bottom: 2px;
+}
+
+.contacto p {
+  font-size: 0.9em;
+}
+
+.contacto img {
+  height: 32px;
+  width: 32px;
+  margin-right: 5px;
+}
+
+.imagenes-redes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.footer-centered {
+  text-decoration: none;
+  font-size: 0.8em;
+  text-align: right;
+}
+
+.newsletter-input {
+  display: flex;
+  flex-direction: row;
+  font-size: 1em;
+  height: 1.5em;
+}
+
+.escribir-email {
+  width: 65%;
+  padding: 3px;
+}
+
+.submit-email {
+  width: 35%;
+  height: 100%;
 }
