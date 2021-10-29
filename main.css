@@ -26,7 +26,8 @@ html {
 }
 
 body {
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   margin: 0;
 }
 
@@ -90,36 +91,31 @@ p, footer {
 
 .flex-col-main {
   width: 100vw;
-  display: grid;
-  grid-template-rows: repeat(1fr, 3);
+  display: flex;
+  flex-direction: column;
 }
 
 .wave-container {
   height: 100vh;
   width: 100vw;
   background-color: var(--main-background);
-  grid-row: 1/2;
-  grid-column: 1/2;
-  display: grid;
-  grid-template-columns: repeat(1fr, 12);
-  grid-template-rows: repeat(1fr, 6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .wave-container h1 {
   color: var(--title-color);
   font-size: 6em;
   text-align: center;
-  grid-column: 1/13;
-  grid-row: 2 / 3;
 }
 
 .descripcion-principal {
   width: inherit;
-  grid-column: 1/13;
-  grid-row: 3/4;
+  height: 25vh;
 }
 
-.descripcion-principal > p {
+.wave-container p {
   color: var(--title-color);
   font-size: 1.2em;
   text-align: center;
@@ -127,56 +123,56 @@ p, footer {
 }
 
 .topwave {
-  height: 100vh;
+  height: auto;
   width: inherit;
   background: var(--second-background);
   color: var(--second-background);
-  text-align: center;
-  grid-row: 2/3;
-  display: grid;
-  grid-template-columns: repeat(1fr, 12);
-  grid-template-rows: repeat(1fr, 6);
+  display: flex;
+  flex-direction: column;
 }
 
 .filler {
-  grid-column: 1/13;
-  grid-row: 1/2;
+  height: 45px;
+  width: 100vw;
+}
+
+.filler1 {
   height: 45px;
   width: 100vw;
 }
 
 .topwave h1 {
-  width: 100vw;
+  width: inherit;
   color: var(--main-color);
-  height: fit-content;
+  height: auto;
   font-size: 4em;
   text-align: center;
-  grid-column: 1/12;
-  grid-row: 2 / 3;
 }
 
 .carta {
   height: auto;
-  grid-row: 3/6;
-  grid-column: 1/13;
-  display: flex;
-  flex-direction: row;
-  padding: 0 2em 0 2em;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2em;
   gap: 2em;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.recuadro-anim {
-  flex: 1 1 auto;
+.recuadro-anim-inicio {
+  grid-column-start: span 1;
+  height: auto;
   padding: 1em;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   justify-content: space-between;
   border: 2px solid var(--main-background);
   box-shadow: 12px 12px 2px 1px var(--main-background);
 }
 
-.recuadro-anim:hover {
+.recuadro-anim-inicio:hover {
   box-shadow: 2px 2px 2px 1px var(--main-background);
   transition: all 250ms ease-in-out
 }
@@ -184,13 +180,13 @@ p, footer {
 /* Animacion propia creada a partir de la de los botones
   tomandola como referencia */
 
-.recuadro-anim h3 {
+.recuadro-anim-inicio h3 {
   color: var(--main-background);
   font-size: 2em;
   text-align: center;
 }
 
-.recuadro-anim p {
+.recuadro-anim-inicio p {
   color: var(--main-background);
   padding: 2em;
   font-size: 1em;
@@ -216,7 +212,7 @@ p, footer {
 
 .btn-anim:hover,
 .btn-anim:active {
-letter-spacing: 3px;
+letter-spacing: 1px;
 transition: all 500ms ease-in-out
 }
 
@@ -257,6 +253,7 @@ width: 100%;
   display: flex;
   flex-direction: column;
   width: 100vw;
+  height: auto;
 }
 
 .presentacion-carta {
@@ -278,6 +275,7 @@ width: 100%;
 
 .carta-de-productos {
   height: auto;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -287,6 +285,19 @@ width: 100%;
   gap: 25px;
 }
 
+.recuadro-anim {
+  border: 2px solid var(--main-background);
+  box-shadow: 12px 12px 2px 1px var(--main-background);
+}
+
+.recuadro-anim:hover {
+  box-shadow: 2px 2px 2px 1px var(--main-background);
+  transition: all 250ms ease-in-out
+}
+
+/* Animacion propia creada a partir de la de los botones
+  tomandola como referencia */
+
 .titulo-carta {
   background-color: var(--second-background);
   color: var(--main-background);
@@ -295,13 +306,11 @@ width: 100%;
 }
 
 .producto {
-  flex: 1 1 31%;
   height: 200px;
+  flex: 1 1 30%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 0;
-  padding: 0;
   margin: auto;
   background-color: var(--item-productos);
   color: var(--title-color);
@@ -320,14 +329,16 @@ width: 100%;
 .producto img {
   grid-area: 2/1/6/2;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 150px;
   margin: auto;
 }
 
 .producto p {
   grid-area: 2/2/6/5;
   text-align: justify;
-  font-size: 0.8em;
+  align-items: center;
+  font-size: 0.75em;
+  padding-right: 2em;
   margin: auto;
   color: var(--second-background);
 }
@@ -370,7 +381,7 @@ width: 100%;
 
 .submit-boton:hover {
   background-color: var(--item-productos);
-  color: var();
+  color: var;
 }
 
 /* Fin de contacto */
@@ -402,8 +413,6 @@ footer {
   flex-direction: column;
   align-content: center;
   justify-content: space-between;
-  border-right: 2px solid var(--second-background);
-  border-left: 2px solid var(--second-background);;
 }
 
 .renglon {
@@ -463,3 +472,155 @@ footer {
   height: 100%;
 }
 
+/* MediaQueries */
+
+@media(max-width: 600px) /* Que detecte todos los disp que tienen pantalla hasta 400px, aplica esto */ {
+
+  .grilla-nav-izq {
+    flex-direction: column;
+    height: auto;
+    position: relative;
+  }
+
+  .wave-container {
+    height: auto;
+  }
+
+  .wave-container h1 {
+    font-size: 4em;
+  }
+
+  .topwave h1, .presentacion-carta h1  {
+    font-size: 3em;
+  }
+
+  .recuadro-anim h3 {
+    font-size: 1.6em;
+  }
+
+  .wave-container p {
+    font-size: 1.2em;
+  }
+
+  /* Primer pagina terminada */
+
+  /* Vinos y aperitivos */
+
+  .presentacion-carta {
+    height: auto;
+  }
+
+  .carta {
+    height: auto;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, 1fr);
+    padding: 2em;
+    gap: 2em;
+    justify-content: space-between;
+  }
+  
+  .recuadro-anim {
+    grid-row-start: span 1;
+    height: auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid var(--main-background);
+    box-shadow: 12px 12px 2px 1px var(--main-background);
+  }
+
+  .titulo-carta {
+    font-size: 1.8em;
+    margin-top: 10px;
+  }
+  
+  .producto {
+    flex: 1 1 100%;
+  }
+
+  .producto p {
+    text-align: justify;
+    margin: auto;
+    padding: 0;
+  }
+
+  /* Fin vinos y aperitivos */
+
+  footer {
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .contacto {
+    width: 100vw;
+    height: auto;
+    gap: 1em;
+    align-items: center;
+  }
+
+  .mapa {
+    display:none;
+  }
+
+  .filler1 {
+    display: none;
+  }
+}
+
+@media(min-width: 600px) and (max-width: 1050px) {
+
+  .wave-container {
+    height: 100vh;
+  }
+
+  .grilla-nav-izq {
+    flex-direction: row;
+    height: auto;
+    position: fixed;
+  }
+
+  .nav-hijo-izq {
+    flex: 1 1 40%;
+    font-size: 0.9em;
+  }
+
+  .titulo-carta {
+    font-size: 1.8em;
+    margin-top: 10px;
+  }
+
+  .mapa {
+    display:none;
+  }
+
+  .producto {
+    flex: 0 0 43%;
+  }
+
+  .producto p {
+    text-align: justify;
+    margin: auto;
+    padding-right: 1em;
+    font-size: 0.7em;
+  }
+ 
+  footer {
+    width: 100vw;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .contacto {
+    width: 100vw;
+    height: auto;
+    gap: 0.7em;
+    align-items: center;
+  }
+
+}
