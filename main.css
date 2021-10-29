@@ -484,7 +484,7 @@ footer {
   }
 
   .wave-container {
-    height: auto;
+    height: 100vh;
   }
 
   .wave-container h1 {
