@@ -197,7 +197,7 @@ p, footer {
   text-align: center;
 }
 
-.btn {
+.boton {
   color: var(--main-background);
   cursor: pointer;
   text-transform: uppercase;
@@ -343,7 +343,40 @@ width: 100%;
   content: " ";
 }
 
+/* Contacto */
+
+.contact-flex {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-background);
+}
+
+.div-contacto {
+  width: 65%;
+  border: 1px solid var(--footer-background);
+  padding: 25px 25px 25px 25px;
+  border-radius: 1em;
+  margin: 2em;
+  background-color: var(--second-background);
+}
+
+.submit-boton {
+  background-color: var(--main-background);
+  color: var(--second-background);
+}
+
+.submit-boton:hover {
+  background-color: var(--item-productos);
+  color: var();
+}
+
+/* Fin de contacto */
+
 /* Footer */
+
 footer {
   grid-row: 3/4;
   grid-column-start: span 12;
@@ -429,3 +462,4 @@ footer {
   width: 35%;
   height: 100%;
 }
+
